@@ -4130,15 +4130,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/istolar/openideal_distribution.git",
-                "reference": "1902ac5fe3a7cf4e7d373bfdefa877af04c8275e"
+                "reference": "2701c086c2077c4bf6b558663d4111b964df01b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/istolar/openideal_distribution/zipball/1902ac5fe3a7cf4e7d373bfdefa877af04c8275e",
-                "reference": "1902ac5fe3a7cf4e7d373bfdefa877af04c8275e",
+                "url": "https://api.github.com/repos/istolar/openideal_distribution/zipball/2701c086c2077c4bf6b558663d4111b964df01b0",
+                "reference": "2701c086c2077c4bf6b558663d4111b964df01b0",
                 "shasum": ""
             },
             "require": {
+                "composer/installers": "^1.2",
                 "drupal/admin_toolbar": "^2.2",
                 "drupal/adminimal_admin_toolbar": "^1.10",
                 "drupal/adminimal_theme": "^1.5",
@@ -4160,12 +4161,15 @@
                 "oomphinc/composer-installers-extender": "^1.1"
             },
             "type": "drupal-profile",
+            "extra": {
+                "installer-name": "idea"
+            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0-or-later"
             ],
             "description": "The OpenideaL distribution profile",
-            "time": "2020-05-16T14:01:06+00:00"
+            "time": "2020-05-16T16:14:18+00:00"
         },
         {
             "name": "league/container",
