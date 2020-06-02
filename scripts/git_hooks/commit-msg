@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+commit_regex='(OI-[0-9]+)'
+error_msg="Please add Jira Issue to your commit message. Example message: 'OI-01: Added cool feature.'"
+
+if ! grep -iqE "$commit_regex" "$1"; then
+    echo "$error_msg" >&2
+    exit 1
+fi
