@@ -32,6 +32,10 @@
         "post-install-cmd": [
             "rm -rf web/libraries/dropzone/test",
             "./scripts/install-git-hooks.sh"
+        ],
+        "post-update-cmd": [
+            "rm -rf web/libraries/dropzone/test",
+            "./scripts/install-git-hooks.sh"
         ]
     },
     "extra": {

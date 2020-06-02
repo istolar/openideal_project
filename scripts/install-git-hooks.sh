@@ -1,15 +1,19 @@
 #!/usr/bin/env bash
 
 docroot=$(pwd)
+git_dir="web/profiles/contrib/idea/.git/hooks"
+scripts_dir="../../scripts/git-hooks"
 
-# Add git hooks to our both git repositories.
-cp scripts/git_hooks/* .git/hooks/
-cp scripts/git_hooks/* web/profiles/contrib/idea/.git/hooks/
-
-# Remove sample files.
-cd scripts/git_hooks
+cd scripts/git-hooks
 for file in *; do
-  sample="$file.sample"
-  rm -f "$docroot/.git/hooks/$sample"
-  rm -f "$docroot/web/profiles/contrib/idea/.git/hooks/$sample"
+  file_path="$docroot/$git_dir/$file"
+
+  # Remove sample and existing file.
+  rm -f "$file_path.sample"
+  rm -f $file_path
+
+  # Copy file to hooks directory and make it executable.
+  cp $scripts_dir/$file $file_path
+  chmod 777 $file_path
+  chmod +x $file_path
 done
