@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
+# Jira Issue is required. Other options (like #commenr) are optional, but appreciated.
+# More details: https://support.atlassian.com/jira-software-cloud/docs/process-issues-with-smart-commits
+
 commit_regex='(OI-[0-9]+)'
-error_msg="Please add Jira Issue to your commit message. Example message: 'OI-01: Added cool feature.'"
+error_msg="Aborting commit. Please add Jira Issue to your commit message. Example: 'OI-01: #comment Added cool feature.'"
 
 if ! grep -iqE "$commit_regex" "$1"; then
     echo "$error_msg" >&2
