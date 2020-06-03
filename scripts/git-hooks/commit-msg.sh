@@ -8,9 +8,9 @@ NC='\033[0m'
 # More details: https://support.atlassian.com/jira-software-cloud/docs/process-issues-with-smart-commits
 
 commit_regex='(OI-[0-9]+)'
-error_msg ="\n ${RED}[ERROR] Aborting commit.${NC}\n Please add Jira Issue to your commit message. Example: 'OI-01: #comment Added cool feature.'\n\n"
+message="\n ${RED}[ERROR] Aborting commit.${NC}\n   Please add Jira Issue to your commit message. Example: 'OI-01: #comment Added cool feature.'\n\n"
 
 if ! grep -iqE "$commit_regex" "$1"; then
-    echo "$error_msg" >&2
+    printf "$message"
     exit 1
 fi

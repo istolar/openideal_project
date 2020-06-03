@@ -6,7 +6,8 @@ scripts_dir="../../scripts/git-hooks"
 
 cd scripts/git-hooks
 for file in *; do
-  file_path="$docroot/$git_dir/$file"
+  filename="${file%.*}"
+  file_path="$docroot/$git_dir/$filename"
 
   # Remove sample and existing file.
   rm -f "$file_path.sample"
