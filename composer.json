@@ -31,11 +31,19 @@
     "scripts": {
         "post-install-cmd": [
             "rm -rf web/libraries/dropzone/test",
-            "./scripts/install-git-hooks.sh"
+            "@install-git-hooks",
+            "@install-phpcs"
         ],
         "post-update-cmd": [
             "rm -rf web/libraries/dropzone/test",
+            "@install-git-hooks",
+            "@install-phpcs"
+        ],
+        "install-git-hooks": [
             "./scripts/install-git-hooks.sh"
+        ],
+        "install-phpcs": [
+            "./vendor/bin/phpcs --config-set installed_paths ../../drupal/coder/coder_sniffer"
         ]
     },
     "extra": {
@@ -61,5 +69,9 @@
             ],
             "merge-extra": true
         }
+    },
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.6.2",
+        "drupal/coder": "^8.3"
     }
 }
