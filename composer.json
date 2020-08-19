@@ -93,6 +93,24 @@
         {
             "type": "package",
             "package": {
+                "name": "d3/d3",
+                "version": "v4.13",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "d3"
+                },
+                "dist": {
+                    "url": "https://github.com/d3/d3/releases/download/v4.13.0/d3.zip",
+                    "type": "zip"
+                },
+                "require": {
+                    "composer/installers": "~1.0"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
                 "name": "ckeditor/autocomplete",
                 "version": "4.14.1",
                 "type": "drupal-library",
