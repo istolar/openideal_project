@@ -1,6 +1,6 @@
 # Quick start
 
-1. `composer create-project istolar/openideal_project {dir_name} --stability=dev`
+1. `composer create-project istolar/openideal_project YOUR_PROJECT_NAME`
 2. `cd dir_name`
 3. `docker-compose up`
 4. `make`
